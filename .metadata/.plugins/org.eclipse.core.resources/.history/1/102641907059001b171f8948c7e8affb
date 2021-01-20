@@ -1,0 +1,30 @@
+/*
+ ============================================================================
+ Name        : 18wszy.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+int chidan(int n);
+int main(void) {
+	int x=5,y;
+	for(y=1;y<=5;y++){
+		chidan(x);
+		printf("第%d个人吃了%d个蛋\n",y,x);
+	}
+
+
+	return EXIT_SUCCESS;
+}
+int chidan(int n){
+	if (n==1){
+		return n;
+	} else {
+		return chidan(3+n);
+	}
+}

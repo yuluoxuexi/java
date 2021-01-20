@@ -1,0 +1,48 @@
+/*
+ * zfc.c
+ *
+ *  Created on: 2021年1月20日
+ *      Author: Administrator
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+void main() {
+//  作业1
+//练习：请输入5个学生的姓名（字符串），要求找出姓名最小的那个学生名字是什么？
+//	int x,n;
+//	char a[5][20]={"aaa","xxx","ccc","eee","ddd"};
+//	for(x=0;x<4;x++){
+//		n=strcmp(a[x],a[x+1]);
+//		if(n>0){
+//			strcpy(a[x+1],a[x]);
+//		}
+//	}
+//	printf("%s",a[4]);
+//	作业2
+//	练习：请输入5个字符串，进行冒泡排序
+	char b[5][20]={"ccc","bbb","www","aaa","eee"};
+	int x,y,n;
+	char a[20];
+	for(x=0;x<5;x++){
+		for(y=0;y<5-x-1;y++){
+			n=strcmp(a[y],a[y+1]);
+			if(n>0){
+				strcpy(b[y],a);
+				strcpy(b[y],b[y+1]);
+				strcpy(b[y+1],a);
+				printf("%c ",b[y]);
+			}
+		}
+	}
+
+
+
+//	作业3
+//	练习：请输入用户名（字符串）和密码（字符串），进行比较用户名固定是admin,密码固定是123
+//	成功就退出
+//	失败要显示：用户名和密码错误1次，请重新输入
+//	最多可以输入5次，5次过后还不正确就提示您的银行卡已经被锁住，并退出
+
+}
