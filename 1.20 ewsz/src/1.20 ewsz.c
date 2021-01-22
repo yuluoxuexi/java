@@ -32,9 +32,9 @@ int mainA(void) {
 //	}
 //	printf("×ÜºÍÎª%d",sum);
 
-	int x, y = 0;
-	int sum;
-	int a[5][5] = { 1 };
+//	int x, y = 0;
+//	int sum;
+//	int a[5][5] = { 1 };
 //	for (x = 0; x < 5; x++) {
 //		for (y = 0; y <= x; y++) {
 //			if ((y == 0 || y == x)) {
@@ -48,26 +48,26 @@ int mainA(void) {
 //		printf("\n");
 //	}
 
-	for (x = 0; x < 5; x++) {
-		for (y = 0; y <= x; y++) {
-			if ((y == 0 || y == x)) {
-				a[x][y] = 1;
-			}
-			if (x >= 1 && y >= 1) {
-				a[x][y] = a[x - 1][y - 1] + a[x - 1][y];
-			}
-		}
-	}
-	int k;
-	for (x = 0; x < 5; x++) {
-		for (y = 0; y < 5 - 1 - x; y++) {
-			printf(" ");
-		}
-		for (k = 0; k <= x; k++) {
-			printf("%d ", a[x][k]);
-		}
-		printf("\n");
-	}
+//	for (x = 0; x < 5; x++) {
+//		for (y = 0; y <= x; y++) {
+//			if ((y == 0 || y == x)) {
+//				a[x][y] = 1;
+//			}
+//			if (x >= 1 && y >= 1) {
+//				a[x][y] = a[x - 1][y - 1] + a[x - 1][y];
+//			}
+//		}
+//	}
+//	int k;
+//	for (x = 0; x < 5; x++) {
+//		for (y = 0; y < 5 - 1 - x; y++) {
+//			printf(" ");
+//		}
+//		for (k = 0; k <= x; k++) {
+//			printf("%d ", a[x][k]);
+//		}
+//		printf("\n");
+//	}
 
 	return EXIT_SUCCESS;
 }
