@@ -16,6 +16,14 @@ struct student {
     char sex[5]; //性别  男 女
     int socer; //成绩
 };
+// 获取文件长度
+int fileLength(FILE* file) {
+    int pos = ftell(file);
+    fseek(file, 0, SEEK_END);//定位到文件的最后面
+    int length = ftell(file);//ftell获得该文件指示符此时的偏移量,此时已经是在文件末尾,故能获得文件的大小
+    fseek(file, pos, SEEK_SET);//定位到文件原来的位置
+    return length;
+}
 void shurushuju() { //输入数据
     FILE* fp = fopen("学生管理系统.txt", "a");
     int x = fileLength(fp) / sizeof(struct student);//文件大小÷结构体大小=结构体数量
@@ -40,14 +48,6 @@ void shurushuju() { //输入数据
     printf("输入成功,返回上一步操作\n");
     fclose(fp);
 }
-// 获取文件长度
-int fileLength(FILE* file) {
-    int pos = ftell(file);
-    fseek(file, 0, SEEK_END);//定位到文件的最后面
-    int length = ftell(file);//ftell获得该文件指示符此时的偏移量,此时已经是在文件末尾,故能获得文件的大小
-    fseek(file, pos, SEEK_SET);//定位到文件原来的位置
-    return length;
-}
 void shuchushuju() { //读取数据
     FILE* fp = fopen("学生管理系统.txt", "r");
     int x = fileLength(fp) / sizeof(struct student);//文件大小÷结构体大小=结构体数量
@@ -63,8 +63,7 @@ void shuchushuju() { //读取数据
                 stu.name, stu.sex, stu.socer);
         }
         fclose(fp);
-    }
-    else {
+    } else {
         printf("找不到文件");
     }
 }
